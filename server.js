@@ -7,7 +7,7 @@ var methodOverride = require("method-override");
 
 var app = express();
 
-app.use(express.static("/assets"));
+app.use(express.static("assets"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

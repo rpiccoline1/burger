@@ -1,7 +1,8 @@
 var express = require("express");
+var router = express.Router();
 var burgers = require("../models/burger.js")
 
-var router = express.Router();
+
 
 router.get("/", function(req, res){
 	burgers.all(function(data){
@@ -21,11 +22,13 @@ router.post("/create", function(req, res){
 });
 
 router.put("/update/:id", function(req, res){
+	console.log(res);
 	var condition = "id = " + req.params.id;
-
-	console.log("condition", condition);
+	
+	//console.log("condition", condition);
 
 	burgers.update({"devoured": req.body.devoured}, condition, function(data){
+		
 		res.redirect("/");
 	});
 });
