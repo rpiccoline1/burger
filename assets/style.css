@@ -1,5 +1,10 @@
+body {
+  background-image: url("");
+}
+
 .jumbotron {
-  background-color: yellow;
   background-image: url("burger.jpg");
   text-align: center;
+  color: rgb(153, 0, 0);
 }
+
