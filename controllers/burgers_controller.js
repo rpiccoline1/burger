@@ -22,11 +22,11 @@ router.post("/create", function(req, res){
 });
 
 router.put("/update/:id", function(req, res){
-	console.log(res);
+	//console.log(res);
 	
 	var condition = "id = " + req.params.id;
 
-	burgers.update({"devoured": req.body.devoured}, condition, function(data){
+	burgers.updateOne("burgers", req.body.devoured, condition, function(data){
 		res.redirect("/");
 	});
 });
